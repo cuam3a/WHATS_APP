@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 var http = require("http").Server(app);
 var io = require("socket.io")(http, {
-  cors: { origin: "http://localhost:5173" },
+  cors: { origin: ["http://localhost:5173","https://kinderemprendedor.com"] },
 });
 
 connectDB();
