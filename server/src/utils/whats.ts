@@ -4,6 +4,9 @@ import WhatsModel from "../models/whats.model";
 
 const client = new Client({
     authStrategy: new NoAuth(),
+    puppeteer: {
+      args: ['--no-sandbox'],
+    }
   });
 
 export const createWhatsSession = (id:any, socket:any) => {
