@@ -1,0 +1,6 @@
+/client
+/server/.wwebjs_auth
+/server/.wwebjs_cache
+/server/.wwebjs_cache
+/server/node_modules
+.env
