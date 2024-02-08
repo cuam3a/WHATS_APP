@@ -37,6 +37,7 @@ export const sendMessage = async(data:Message, socket:any) => {
     for(var i=0; i<data.numbers.length; i++){
         count++;
         if(count === 10){
+            socket.emit("sendTotal", { total })
             await sleepFor(100000);
             count = 0;
         }
@@ -69,7 +70,7 @@ export const sendMessage = async(data:Message, socket:any) => {
         console.log(fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getMilliseconds() + " ENVIADO A " + number + " t:" + tiempo + " ID:" + JSON.stringify(id));
         total++;
     }
-    
+    socket.emit("sendTotal", { total })
     await WhatsModel.create({
       total: total
     });
