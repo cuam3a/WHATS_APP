@@ -61,7 +61,7 @@ export const sendMessage = async(data:Message, socket:any) => {
         }
         valueParam4++;
         if(valueParam4 >= data.param4.length){
-            valueParam3 = 0;
+            valueParam4 = 0;
         }
         let number = `${data.numbers[i].number}@c.us`;
         const messageSend = data.message.replace('{1}', p1).replace('{2}', p2).replace('{3}', p3).replace('{4}', p4).replace('{0}', (data.numbers[i]?.parameter ?? ""))
