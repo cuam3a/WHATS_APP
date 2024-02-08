@@ -44,7 +44,12 @@ export type User = {
     param2: string[];
     param3: string[];
     param4: string[];
-    numbers: string[];
+    numbers: Partial<Number>[];
+  }
+
+  export type Number = {
+    number: string;
+    parameter: string;
   }
 
   export type Whats = {

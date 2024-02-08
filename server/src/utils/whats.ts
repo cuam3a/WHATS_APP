@@ -63,8 +63,8 @@ export const sendMessage = async(data:Message, socket:any) => {
         if(valueParam4 >= data.param4.length){
             valueParam3 = 0;
         }
-        let number = `${data.numbers[i]}@c.us`;
-        const messageSend = data.message.replace('{1}', p1).replace('{2}', p2).replace('{3}', p3).replace('{4}', p4)
+        let number = `${data.numbers[i].number}@c.us`;
+        const messageSend = data.message.replace('{1}', p1).replace('{2}', p2).replace('{3}', p3).replace('{4}', p4).replace('{0}', (data.numbers[i]?.parameter ?? ""))
         var id = await client.sendMessage(number, messageSend);
         var fecha = new Date(Date.now())
         console.log(fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getMilliseconds() + " ENVIADO A " + number + " t:" + tiempo + " ID:" + JSON.stringify(id));
