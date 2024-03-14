@@ -40,6 +40,7 @@ export type User = {
 
   export type Message = {
     message: string;
+    time:number;
     param1: string[];
     param2: string[];
     param3: string[];

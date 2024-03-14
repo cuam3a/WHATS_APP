@@ -41,7 +41,7 @@ export const sendMessage = async(data:Message, socket:any) => {
             await sleepFor(100000);
             count = 0;
         }
-        let tiempo = Math.floor(Math.random() * (9000 - 3000)) + 6000;
+        let tiempo = data.time * 1000;
         await sleepFor(tiempo);
         const p1 = data.param1[valueParam1];
         const p2 = data.param2[valueParam2];
