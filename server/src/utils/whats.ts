@@ -1,12 +1,17 @@
 import { Client, NoAuth } from "whatsapp-web.js";
 import { Message } from "../../../types/types";
 import WhatsModel from "../models/whats.model";
+const wwebVersion = '2.2407.3';
 
 const client = new Client({
     authStrategy: new NoAuth(),
     puppeteer: {
       args: ['--no-sandbox'],
-    }
+    },
+    webVersionCache: {
+      type: 'remote',
+      remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
+  },
   });
 
 export const createWhatsSession = (id:any, socket:any) => {
